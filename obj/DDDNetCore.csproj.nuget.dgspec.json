@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\kikod\\.vscode\\cli\\ARQSI\\sem5pi_2024_25_g039\\DDDNetCore.csproj": {}
+    "D:\\Utilizadores\\João Durães\\Desktop\\ISEP\\4 ANO\\1 semestre\\PROJETO\\DDDNetCore.csproj": {}
   },
   "projects": {
-    "C:\\Users\\kikod\\.vscode\\cli\\ARQSI\\sem5pi_2024_25_g039\\DDDNetCore.csproj": {
+    "D:\\Utilizadores\\João Durães\\Desktop\\ISEP\\4 ANO\\1 semestre\\PROJETO\\DDDNetCore.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\kikod\\.vscode\\cli\\ARQSI\\sem5pi_2024_25_g039\\DDDNetCore.csproj",
+        "projectUniqueName": "D:\\Utilizadores\\João Durães\\Desktop\\ISEP\\4 ANO\\1 semestre\\PROJETO\\DDDNetCore.csproj",
         "projectName": "DDDNetCore",
-        "projectPath": "C:\\Users\\kikod\\.vscode\\cli\\ARQSI\\sem5pi_2024_25_g039\\DDDNetCore.csproj",
-        "packagesPath": "C:\\Users\\kikod\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\kikod\\.vscode\\cli\\ARQSI\\sem5pi_2024_25_g039\\obj\\",
+        "projectPath": "D:\\Utilizadores\\João Durães\\Desktop\\ISEP\\4 ANO\\1 semestre\\PROJETO\\DDDNetCore.csproj",
+        "packagesPath": "D:\\Utilizadores\\João Durães\\.nuget\\packages\\",
+        "outputPath": "D:\\Utilizadores\\João Durães\\Desktop\\ISEP\\4 ANO\\1 semestre\\PROJETO\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\kikod\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "D:\\Utilizadores\\João Durães\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
@@ -75,9 +75,17 @@
               "target": "Package",
               "version": "[8.0.5, )"
             },
+            "MySql.Data": {
+              "target": "Package",
+              "version": "[9.0.0, )"
+            },
             "Newtonsoft.Json": {
               "target": "Package",
               "version": "[13.0.3, )"
+            },
+            "Pomelo.EntityFrameworkCore.MySql": {
+              "target": "Package",
+              "version": "[8.0.2, )"
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",

@@ -14,6 +14,7 @@ using DDDSample1.Domain.Shared;
 using DDDSample1.Domain.Categories;
 using DDDSample1.Domain.Products;
 using DDDSample1.Domain.Families;
+using System; 
 
 namespace DDDSample1
 {
@@ -29,11 +30,16 @@ namespace DDDSample1
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<DDDSample1DbContext>(opt =>
-                opt.UseInMemoryDatabase("DDDSample1DB")
-                .ReplaceService<IValueConverterSelector, StronglyEntityIdValueConverterSelector>());
+           
+        services.AddDbContext<DDDSample1DbContext>(opt =>
+            opt.UseMySql(Configuration.GetConnectionString("DefaultConnection"),
+            new MySqlServerVersion(new Version(8, 0, 21))) // Ajuste a versão conforme necessário
+            );
+
+
 
             ConfigureMyServices(services);
+            
 
             services.AddControllers().AddNewtonsoftJson();
 

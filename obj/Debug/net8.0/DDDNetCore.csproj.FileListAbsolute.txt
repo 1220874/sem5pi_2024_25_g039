@@ -1033,3 +1033,4 @@ D:\Utilizadores\João Durães\Desktop\ISEP\4 ANO\1 semestre\PROJETO\bin\Debug\ne
 D:\Utilizadores\João Durães\Desktop\ISEP\4 ANO\1 semestre\PROJETO\bin\Debug\net8.0\runtimes\win-x64\native\krb5_64.dll
 D:\Utilizadores\João Durães\Desktop\ISEP\4 ANO\1 semestre\PROJETO\bin\Debug\net8.0\runtimes\win-x64\native\krbcc64.dll
 D:\Utilizadores\João Durães\Desktop\ISEP\4 ANO\1 semestre\PROJETO\bin\Debug\net8.0\runtimes\win\lib\net8.0\System.Windows.Extensions.dll
+D:\Utilizadores\João Durães\Desktop\ISEP\4 ANO\1 semestre\PROJETO\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll

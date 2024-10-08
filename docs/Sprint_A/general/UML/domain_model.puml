@@ -1,0 +1,37 @@
+@startuml
+
+entity "Person" as entity_person {}
+entity "User" as entity_user <<entity root>> {}
+entity "Patient" as entity_patient <<entity root>> {}
+entity "Staff" as entity_staff <<entity root>> {}
+entity "Doctor" as entity_doctor <<entity root>> {}
+entity "Specialization" as entity_staffSpecialization <<entity root>> {
+    Cardiology
+    Orthopedics
+}
+entity "OperationRequest" as entity_operationRequest <<entity root>> {}
+entity "OperationType" as entity_operationType <<entity root>> {}
+entity "Appointment" as entity_appointment <<entity root>> {}
+entity "SurgeryRoom" as entity_surgeryRoom <<entity root>> {}
+
+entity_patient -- entity_user: "is represented in the system by >"
+
+entity_staff -- entity_staffSpecialization: "has a >"
+entity_staff-- entity_user: "is represented in the system by >"
+
+entity_doctor --|> entity_staff
+entity_doctor --* entity_operationRequest
+
+entity_staffSpecialization -- entity_operationType: "< has a list of"
+
+entity_user --|> entity_person
+
+entity_operationRequest-- entity_patient: "is for >"
+
+entity_operationType --* entity_operationRequest: "is related to >"
+
+entity_appointment - entity_operationRequest: "is scheduled for >"
+
+entity_surgeryRoom-- entity_appointment: "hosts >"
+
+@enduml

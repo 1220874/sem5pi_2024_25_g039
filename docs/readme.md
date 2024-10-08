@@ -19,22 +19,22 @@ A atribuição de tarefas (requisitos/user stories/use cases) durante o projeto.
 
 | User Story                              | Número de estudante                                         |
 |-----------------------------------------|-------------------------------------------------------------|
-| **[US 5.1.1](Sprint_A/us_5.1.1/readme.md)** | [xxxxxxx](xxxxxxx/readme.md) e [xxxxxxx](xxxxxxx/readme.md) |
-| **[US 5.1.2](Sprint_A/us_5.1.2/readme.md)** | [xxxxxxx](xxxxxxx/readme.md) e [xxxxxxx](xxxxxxx/readme.md) |
-| **[US 5.1.3](Sprint_A/us_5.1.3/readme.md)** | [xxxxxxx](xxxxxxx/readme.md) e [xxxxxxx](xxxxxxx/readme.md) |
-| **[US 5.1.4](Sprint_A/us_5.1.4/readme.md)** | [xxxxxxx](xxxxxxx/readme.md) e [xxxxxxx](xxxxxxx/readme.md) |
-| **[US 5.1.5](Sprint_A/us_5.1.5/readme.md)** | [xxxxxxx](xxxxxxx/readme.md) e [xxxxxxx](xxxxxxx/readme.md) |
+| **[US 5.1.1](Sprint_A/us_5.1.1/readme.md)** | [1211314](1211314/readme.md) e [xxxxxxx](xxxxxxx/readme.md) |
+| **[US 5.1.2](Sprint_A/us_5.1.2/readme.md)** | [1211314](1211314/readme.md) e [xxxxxxx](xxxxxxx/readme.md) |
+| **[US 5.1.3](Sprint_A/us_5.1.3/readme.md)** |   |
+| **[US 5.1.4](Sprint_A/us_5.1.4/readme.md)** |     |
+| **[US 5.1.5](Sprint_A/us_5.1.5/readme.md)** | [1211314](1211314/readme.md)   |
 | **[US 5.1.6](Sprint_A/us_5.1.6/readme.md)** | [xxxxxxx](xxxxxxx/readme.md) e [xxxxxxx](xxxxxxx/readme.md) |
-| **[US 5.1.7](Sprint_A/us_5.1.7/readme.md)** | [xxxxxxx](xxxxxxx/readme.md) e [xxxxxxx](xxxxxxx/readme.md) |
-| **[US 5.1.8](Sprint_A/us_5.1.8/readme.md)** | [xxxxxxx](xxxxxxx/readme.md) e [xxxxxxx](xxxxxxx/readme.md) |
-| **[US 5.1.9](Sprint_A/us_5.1.9/readme.md)** | [xxxxxxx](xxxxxxx/readme.md) e [xxxxxxx](xxxxxxx/readme.md) |
-| **[US 5.1.10](Sprint_A/us_5.1.10/readme.md)** | [xxxxxxx](xxxxxxx/readme.md) e [xxxxxxx](xxxxxxx/readme.md) |
+| **[US 5.1.7](Sprint_A/us_5.1.7/readme.md)** |   |
+| **[US 5.1.8](Sprint_A/us_5.1.8/readme.md)** |   |
+| **[US 5.1.9](Sprint_A/us_5.1.9/readme.md)** |   |
+| **[US 5.1.10](Sprint_A/us_5.1.10/readme.md)** |    |
 | **[US 5.1.11](Sprint_A/us_5.1.11/readme.md)** |  |
-| **[US 5.1.12](Sprint_A/us_5.1.12/readme.md)** |  |
-| **[US 5.1.13](Sprint_A/us_5.1.13/readme.md)** |  |
-| **[US 5.1.14](Sprint_A/us_5.1.14/readme.md)** |  |
-| **[US 5.1.15](Sprint_A/us_5.1.15/readme.md)** |  |
-| **[US 5.1.16](Sprint_A/us_5.1.16/readme.md)** |  |
+| **[US 5.1.12](Sprint_A/us_5.1.12/readme.md)** | [1211314](1211314/readme.md) |
+| **[US 5.1.13](Sprint_A/us_5.1.13/readme.md)** | [1211314](1211314/readme.md) |
+| **[US 5.1.14](Sprint_A/us_5.1.14/readme.md)** | [1211314](1211314/readme.md) |
+| **[US 5.1.15](Sprint_A/us_5.1.15/readme.md)** | [1211314](1211314/readme.md) |
+| **[US 5.1.16](Sprint_A/us_5.1.16/readme.md)** | |
 | **[US 5.1.17](Sprint_A/us_5.1.17/readme.md)** |  |
 | **[US 5.1.18](Sprint_A/us_5.1.18/readme.md)** |  |
 | **[US 5.1.19](Sprint_A/us_5.1.19/readme.md)** |  |

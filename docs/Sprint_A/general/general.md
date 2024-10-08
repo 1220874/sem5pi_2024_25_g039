@@ -1,8 +1,7 @@
-# Modelo de Domínio
+# Domain Model
 
-![Modelo de Domínio](SVG/domain_model.svg)
+![Domain Model](PNG/domain_model.png)
 
-# Diagrama de caso de uso
+# Use Case Diagram
 
-![Diagrama de caso de uso](SVG/use_case_diagram.svg)
-
+![Use Case Diagram](SVG/use_case_diagram.svg)

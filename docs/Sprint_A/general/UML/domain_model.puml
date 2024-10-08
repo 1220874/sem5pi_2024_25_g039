@@ -5,10 +5,7 @@ entity "User" as entity_user <<entity root>> {}
 entity "Patient" as entity_patient <<entity root>> {}
 entity "Staff" as entity_staff <<entity root>> {}
 entity "Doctor" as entity_doctor <<entity root>> {}
-entity "Specialization" as entity_staffSpecialization <<entity root>> {
-    Cardiology
-    Orthopedics
-}
+entity "Specialization" as entity_staffSpecialization <<entity root>> {}
 entity "OperationRequest" as entity_operationRequest <<entity root>> {}
 entity "OperationType" as entity_operationType <<entity root>> {}
 entity "Appointment" as entity_appointment <<entity root>> {}

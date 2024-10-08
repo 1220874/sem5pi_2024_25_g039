@@ -1,35 +1,53 @@
-# US 000
+# US 5.1.1
 
-*Este é um modelo de exemplo*
+## 1. Context
 
-## 1. Contexto
+*As an Admin, I want to register new backoffice users (e.g., doctors, nurses, technicians, admins) via an out-of-band process, so that they can access the backoffice system with appropriate permissions.*
 
-*Explain the context for this task. It is the first time the task is assigned to be developed or this tasks was incomplete in a previous sprint and is to be completed in this sprint? Are we fixing some bug?*
+## 2. Requirements
 
-## 2. Requisitos
 
-*In this section you should present the functionality that is being developed, how do you understand it, as well as possible correlations to other requirements (i.e., dependencies).*
+**US 5.1.1**
 
-*Example*
+- 5.1.1.1. Backoffice users (e.g., doctors, nurses, technicians) are registered by an Admin via an internal process, not via self-registration.
 
-**US G002** As {Ator} I Want...
+- 5.1.1.2. Admin assigns roles (e.g., Doctor, Nurse, Technician) during the registration process.
 
-- G002.1. Blá Blá Blá ...
+- 5.1.1.3. Registered users receive a one-time setup link via email to set their password and activate their account.
 
-- G002.2. Blá Blá Blá ...
+- 5.1.1.4. The system enforces strong password requirements for security.
 
-*Regarding this requirement we understand that it relates to...*
+- 5.1.1.5. A confirmation email is sent to verify the user’s registration.
 
-### 2.1. Dependências encontradas
-*User stories das quais esta depende.*
+
+### 2.1. Dependencies
+
+- This user story does not have dependencies on other user stories.
+
 
 ### 2.2. Critérios de aceitação
 
 ## 3. Análise
 
-*In this section, the team should report the study/analysis/comparison that was done in order to take the best design decisions for the requirement. This section should also include supporting diagrams/artifacts (such as domain model; use case diagrams, etc.),*
-
 ### 3.1. Respostas do cliente
+
+>**Questão:** "Chapter 3.2 says that "Backoffice users are registered by the admin in the IAM through an out-of-band process.", but US 5.1.1 says that "Backoffice users are registered by an Admin via an internal process, not via self-registration.".
+Can you please clarify if backoffice users registration uses the IAM system? And if the IAM system is the out-of-band process?"
+> 
+>**Resposta:** "What this means is that backoffice users can not self-register in the system like the patients do. The admin must register the backoffice user. If you are using an external IAM (e.g., Google, Azzure, Linkedin, ...) the backoffice user must first create their account in the IAM provider and then pass the credential info to the admin so that the user account in the system is "linked" wit the external identity provider."
+
+>**Questão:** "Can you clarify the username and email requirements?"
+> 
+>**Resposta:** "The username is the "official" email address of the user. for backoffice users, this is the mechanographic number of the collaborator, e.g., D240003 or N190345, and the DNS domain of the system. For instance, Doctor Manuela Fernandes has email "D180023@myhospital.com". The system must allow for an easy configuration of the DNS domain (e.g., environment variable).
+For patients, the username is the email address provided in the patient record and used as identity in the external IAM. for instance patient Carlos Silva has provided his email csilva98@gmail.com the first time he entered the hospital. That email address will be his username when he self-registers in the system."
+
+>**Questão:** ".."
+> 
+>**Resposta:** "..."
+
+>**Questão:** ".."
+> 
+>**Resposta:** "..."
 
 >**Questão:** ".."
 > 

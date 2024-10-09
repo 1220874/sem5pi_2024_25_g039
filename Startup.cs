@@ -6,15 +6,15 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using DDDSample1.Infrastructure;
-using DDDSample1.Infrastructure.Categories;
 using DDDSample1.Infrastructure.Shared;
 using DDDSample1.Domain.Shared;
-using DDDSample1.Domain.Categories;
 using System;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using System.Text;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
+using Infrastructure.Users;
+using Services;
 
 namespace DDDSample1
 {
@@ -29,7 +29,11 @@ namespace DDDSample1
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
-        {
+        {       
+            services.AddScoped<UserService>(); // Adicione esta linha para registrar o UserService
+            services.AddScoped<UserRepository>(); // Certifique-se de que o UserRepository também está registrado
+            services.AddScoped<IUnitOfWork, UnitOfWork>(); // Certifique-se de que o IUnitOfWork está registrado
+
             var key = Encoding.ASCII.GetBytes(Settings.Secret);
 
             services.AddCors(options =>
@@ -60,10 +64,10 @@ namespace DDDSample1
                 };
             });
 
-            services.AddDbContext<DDDSample1DbContext>(opt =>
-                opt.UseMySql(Configuration.GetConnectionString("DefaultConnection"),
-                new MySqlServerVersion(new Version(8, 0, 21))) // Ajuste a versão conforme necessário
+            services.AddDbContext<DDDSample1DbContext>(options =>
+                options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"))
             );
+            
 
             ConfigureMyServices(services);
 
@@ -143,11 +147,10 @@ namespace DDDSample1
             });
         }
 
+
         public void ConfigureMyServices(IServiceCollection services)
         {
             services.AddTransient<IUnitOfWork, UnitOfWork>();
-            services.AddTransient<ICategoryRepository, CategoryRepository>();
-            services.AddTransient<CategoryService>();
         }
     }
 }

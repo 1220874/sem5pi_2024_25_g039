@@ -4,8 +4,9 @@ using System.Security.Claims;
 using System.Text;
 using Domain.Users;
 using Microsoft.IdentityModel.Tokens;
+using DDDSample1;
 
-namespace DDDSample1
+namespace Services
 {
     public static class TokenService
     {

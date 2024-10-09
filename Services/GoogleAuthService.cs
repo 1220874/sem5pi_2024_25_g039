@@ -1,24 +1,20 @@
-using Google.Apis.Auth;
-using System.Threading.Tasks;
 using System.Collections.Generic;
+using System.Threading.Tasks;
+using Google.Apis.Auth;
 
-public class GoogleAuthService
+namespace DDDNetCore.Services
 {
-    private readonly string _clientId;
-
-    public GoogleAuthService(string clientId)
+    public class GoogleAuthService(string clientId)
     {
-        _clientId = clientId;
-    }
-
-    public async Task<GoogleJsonWebSignature.Payload> VerifyGoogleTokenAsync(string token)
-    {
-        var settings = new GoogleJsonWebSignature.ValidationSettings()
+        public async Task<GoogleJsonWebSignature.Payload> VerifyGoogleTokenAsync(string token)
         {
-            Audience = new List<string>() { _clientId }
-        };
+            var settings = new GoogleJsonWebSignature.ValidationSettings()
+            {
+                Audience = new List<string>() { clientId }
+            };
 
-        var payload = await GoogleJsonWebSignature.ValidateAsync(token, settings);
-        return payload;
+            var payload = await GoogleJsonWebSignature.ValidateAsync(token, settings);
+            return payload;
+        }
     }
 }

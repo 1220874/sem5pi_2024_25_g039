@@ -6,68 +6,63 @@
 
 ## 2. Requirements
 
+### 2.1. Acceptance Criteria
 
-**US 5.1.1**
+- **5.1.1.1.** Backoffice users (e.g., doctors, nurses, technicians) are registered by an Admin via an internal process, not via self-registration.
 
-- 5.1.1.1. Backoffice users (e.g., doctors, nurses, technicians) are registered by an Admin via an internal process, not via self-registration.
+- **5.1.1.2.** Admin assigns roles (e.g., Doctor, Nurse, Technician) during the registration process.
 
-- 5.1.1.2. Admin assigns roles (e.g., Doctor, Nurse, Technician) during the registration process.
+- **5.1.1.3.** Registered users receive a one-time setup link via email to set their password and activate their account.
 
-- 5.1.1.3. Registered users receive a one-time setup link via email to set their password and activate their account.
+- **5.1.1.4.** The system enforces strong password requirements for security.
 
-- 5.1.1.4. The system enforces strong password requirements for security.
+- **5.1.1.5.** A confirmation email is sent to verify the user’s registration.
 
-- 5.1.1.5. A confirmation email is sent to verify the user’s registration.
-
-
-### 2.1. Dependencies
+### 2.2. Dependencies
 
 - This user story does not have dependencies on other user stories.
 
+### 2.3. Forum Insights
 
-### 2.2. Critérios de aceitação
-
-## 3. Análise
-
-### 3.1. Respostas do cliente
-
->**Questão:** "Chapter 3.2 says that "Backoffice users are registered by the admin in the IAM through an out-of-band process.", but US 5.1.1 says that "Backoffice users are registered by an Admin via an internal process, not via self-registration.".
+>**Q1:** "Chapter 3.2 says that "Backoffice users are registered by the admin in the IAM through an out-of-band process.", but US 5.1.1 says that "Backoffice users are registered by an Admin via an internal process, not via self-registration.".
 Can you please clarify if backoffice users registration uses the IAM system? And if the IAM system is the out-of-band process?"
-> 
->**Resposta:** "What this means is that backoffice users can not self-register in the system like the patients do. The admin must register the backoffice user. If you are using an external IAM (e.g., Google, Azzure, Linkedin, ...) the backoffice user must first create their account in the IAM provider and then pass the credential info to the admin so that the user account in the system is "linked" wit the external identity provider."
+>
+>**A1:** "What this means is that backoffice users can not self-register in the system like the patients do. The admin must register the backoffice user. If you are using an external IAM (e.g., Google, Azzure, Linkedin, ...) the backoffice user must first create their account in the IAM provider and then pass the credential info to the admin so that the user account in the system is "linked" wit the external identity provider."
 
->**Questão:** "Can you clarify the username and email requirements?"
-> 
->**Resposta:** "The username is the "official" email address of the user. for backoffice users, this is the mechanographic number of the collaborator, e.g., D240003 or N190345, and the DNS domain of the system. For instance, Doctor Manuela Fernandes has email "D180023@myhospital.com". The system must allow for an easy configuration of the DNS domain (e.g., environment variable).
+>**Q2:** "Can you clarify the username and email requirements?"
+>
+>**A2:** "The username is the "official" email address of the user. for backoffice users, this is the mechanographic number of the collaborator, e.g., D240003 or N190345, and the DNS domain of the system. For instance, Doctor Manuela Fernandes has email "D180023@myhospital.com". The system must allow for an easy configuration of the DNS domain (e.g., environment variable).
 For patients, the username is the email address provided in the patient record and used as identity in the external IAM. for instance patient Carlos Silva has provided his email csilva98@gmail.com the first time he entered the hospital. That email address will be his username when he self-registers in the system."
 
->**Questão:** ".."
-> 
->**Resposta:** "..."
+>**Q3:** ".."
+>
+>**A3:** "..."
 
->**Questão:** ".."
-> 
->**Resposta:** "..."
+>**Q4:** ".."
+>
+>**A4:** "..."
 
->**Questão:** ".."
-> 
->**Resposta:** "..."
+>**Q5:** ".."
+>
+>**A5:** "..."
 
-### 3.2. Diagrama de Sequência do Sistema (Nível 1 - Vista de Processos)
+## 3. Analysis
 
-![Diagrama de Sequência do Sistema](IMG/system-sequence-diagram-level-1.svg)
+### 3.1. Sequence Diagram of the System (Level 1 - Process View)
 
-### 3.3. Diagrama de Sequência do Sistema (Nível 2 - Vista de Processos)
+![Sequence Diagram of the System](IMG/system-sequence-diagram-level-1.svg)
 
-![Diagrama de Sequência do Sistema](IMG/system-sequence-diagram-level-2.svg)
+### 3.1. Sequence Diagram of the System (Level 2 - Process View)
+
+![Sequence Diagram of the System](IMG/system-sequence-diagram-level-2.svg)
 
 ## 4. Design
 
 *In this sections, the team should present the solution design that was adopted to solve the requirement. This should include, at least, a diagram of the realization of the functionality (e.g., sequence diagram), a class diagram (presenting the classes that support the functionality), the identification and rational behind the applied design patterns and the specification of the main tests used to validade the functionality.*
 
-### 4.1. Diagrama de Sequência (Nível 3 - Vista de Processos)
+### 4.1. Sequence Diagram (Level 3 - Process View)
 
-![Diagrama de Sequência](IMG/sequence-diagram-level-3.svg)
+![Sequence Diagram](IMG/sequence-diagram-level-3.svg)
 
 ### 4.2. Testes
 
@@ -80,7 +75,7 @@ public void ensureNullIsNotAllowed() {
 }
 ```
 
-## 5. Implementação
+## 5. Implementation
 
 *In this section the team should present, if necessary, some evidencies that the implementation is according to the design. It should also describe and explain other important artifacts necessary to fully understand the implementation like, for instance, configuration files.*
 
@@ -88,13 +83,13 @@ public void ensureNullIsNotAllowed() {
 
 ...
 
-## 6. Integração/Demonstração
+## 6. Integration/Demonstration
 
 *In this section the team should describe the efforts realized in order to integrate this functionality with the other parts/components of the system*
 
 *It is also important to explain any scripts or instructions required to execute an demonstrate this functionality*
 
-## 7. Observações
+## 7. Observations
 
 *This section should be used to include any content that does not fit any of the previous sections.*
 

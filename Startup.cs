@@ -15,6 +15,9 @@ using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using Infrastructure.Users;
 using Services;
+using Domain.MailDomain;
+using Shared;
+
 
 namespace DDDSample1
 {
@@ -108,6 +111,10 @@ namespace DDDSample1
                     }
                 });
             });
+        services.Configure<MailDSettings>(Configuration.GetSection("MailSettings"));
+        services.AddTransient<IMailService, MailServices>();
+
+            
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

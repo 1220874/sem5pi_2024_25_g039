@@ -7,6 +7,9 @@ using DDDSample1.Domain.Shared;
 using Services;
 using System;
 using System.Text.RegularExpressions;
+using Shared;
+using Domain.MailDomain;
+using Microsoft.Extensions.Options;
 
 namespace Services
 {
@@ -14,11 +17,16 @@ namespace Services
 
         private readonly IUnitOfWork _unitOfWork;
         private readonly UserRepository _repo;
+        private readonly IMailService _mailService;
+        private readonly MailDSettings _mailSettings;
 
-        public UserService(IUnitOfWork unitOfWork, UserRepository repo)
+        public UserService(IUnitOfWork unitOfWork, UserRepository repo, IMailService mailService, IOptions<MailDSettings> mailSettings)
         {
             this._unitOfWork = unitOfWork;
             this._repo = repo;
+            _mailService = mailService ?? throw new ArgumentNullException(nameof(mailService));
+            _mailSettings = mailSettings?.Value ?? throw new ArgumentNullException(nameof(mailSettings));
+        
         }
 
         public UserService(){}
@@ -58,11 +66,19 @@ namespace Services
             {
                 throw new Exception("Formato de email inválido. (Exemplo: aaa@aaa.aaa)");
             }
-            
-            var user = new User(dto.Username, dto.Role, dto.Email, password );
-            await this._repo.AddAsync(user);
+            var user = new User(dto.Username, dto.Role, dto.Email, password);
+            await _repo.AddAsync(user);
+            await _unitOfWork.CommitAsync();
 
-           await this._unitOfWork.CommitAsync();
+            // Mandar email para o email do user
+            MailData mailData = new MailData
+            (
+                dto.Email,
+                dto.Username,
+                "HOSPITAL DO ISEP - Conta Criada Com Sucesso",
+                "CLICA AQUI PARA MUDAR A PASSWORD: " + password
+            );
+            bool emailSent = _mailService.SendMail(mailData);
 
             return new UserDto(user.Username, user.Role, user.Email);
         }

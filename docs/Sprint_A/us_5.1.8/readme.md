@@ -1,29 +1,27 @@
-# US 000
+# US 5.1.8
 
-*Este é um modelo de exemplo*
 
 ## 1. Contexto
 
-*Explain the context for this task. It is the first time the task is assigned to be developed or this tasks was incomplete in a previous sprint and is to be completed in this sprint? Are we fixing some bug?*
+*As an Admin, I want to create a new patient profile, so that I can register their personal details and medical history.*
 
 ## 2. Requisitos
 
-*In this section you should present the functionality that is being developed, how do you understand it, as well as possible correlations to other requirements (i.e., dependencies).*
 
-*Example*
+**US 5.1.8**
 
-**US G002** As {Ator} I Want...
+- 5.1.8.1. Admins can input patient details such as first name, last name, date of birth, contact information, and medical history.
 
-- G002.1. Blá Blá Blá ...
+- 5.1.8.2. A unique patient ID (Medical Record Number) is generated upon profile creation.
 
-- G002.2. Blá Blá Blá ...
+- 5.1.8.3. The system validates that the patient’s email and phone number are unique.
 
-*Regarding this requirement we understand that it relates to...*
+- 5.1.8.4. The profile is stored securely in the system, and access is governed by role-based permissions.
 
 ### 2.1. Dependências encontradas
-*User stories das quais esta depende.*
 
-### 2.2. Critérios de aceitação
+ - 
+
 
 ## 3. Análise
 
@@ -31,9 +29,28 @@
 
 ### 3.1. Respostas do cliente
 
+>**Questão:** "It is specified that the admin can input some of the patient's information (name, date of birth, contact information, and medical history).
+
+Do they also input the omitted information (gender, emergency contact and allergies/medical condition)?
+Additionally, does the medical history that the admin inputs refer to the patient's medical record, or is it referring to the appointment history?"
+> 
+>**Resposta:** "The admin can not input medical history nor allergies. they can however input gender and emergency contact."
+
 >**Questão:** ".."
 > 
 >**Resposta:** "..."
+
+>**Questão:** ".."
+> 
+>**Resposta:** "..."
+
+>**Questão:** ".."
+> 
+>**Resposta:** "..."
+
+
+
+
 
 ### 3.2. Diagrama de Sequência do Sistema (Nível 1 - Vista de Processos)
 

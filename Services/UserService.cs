@@ -6,6 +6,7 @@ using DDDSample1.Infrastructure;
 using DDDSample1.Domain.Shared;
 using Services;
 using System;
+using System.Text.RegularExpressions;
 
 namespace Services
 {
@@ -25,7 +26,7 @@ namespace Services
         {
             var list = await this._repo.GetAllAsync();
             
-            List<UserDto> listDto = list.ConvertAll<UserDto>(urs => new UserDto{Id = urs.Id, Username = urs.Username, Role = urs.Role, Email = urs.Email});
+            List<UserDto> listDto = list.ConvertAll<UserDto>(urs => new UserDto(urs.Username, urs.Role, urs.Email));
 
             return listDto;
         }
@@ -37,18 +38,33 @@ namespace Services
             if(urs == null)
                 return null;
 
-            return new UserDto{Id = urs.Id, Username = urs.Username, Role = urs.Role, Email = urs.Email};
+            return new UserDto(urs.Username, urs.Role, urs.Email);
         }
         public async Task<UserDto> AddAsync(UserDto dto)
         {   
             //PASSWORD TEMPORARIA DEPOIS MUDAR AO METER A MERDA DO EMAIL
             string password = "123";
+
+            // Verificar se o email já existe no banco de dados
+            var existingUser = await this._repo.GetByEmailAsync(dto.Email);
+            if (existingUser != null)
+            {
+                throw new Exception("Email já registado no sistema.");
+            }
+
+            // Validar formato do email usando regex
+            string emailPattern = @"^[\w.-]+@[a-zA-Z\d.-]+\.[a-zA-Z]{2,}$";
+            if (!Regex.IsMatch(dto.Email, emailPattern))
+            {
+                throw new Exception("Formato de email inválido. (Exemplo: aaa@aaa.aaa)");
+            }
+            
             var user = new User(dto.Username, dto.Role, dto.Email, password );
             await this._repo.AddAsync(user);
 
            await this._unitOfWork.CommitAsync();
 
-            return new UserDto { Id = user.Id, Username = user.Username, Role = user.Role, Email = user.Email };
+            return new UserDto(user.Username, user.Role, user.Email);
         }
         
         public async Task<string> AuthenticateAsync(string username, string password)

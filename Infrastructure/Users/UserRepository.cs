@@ -36,6 +36,11 @@ namespace Infrastructure.Users
         {
             return await _context.Users.FindAsync(id);
         }
+
+        public async Task<User> GetByEmailAsync(string email)
+        {
+            return await _context.Users.FirstOrDefaultAsync(x => x.Email.ToLower() == email.ToLower());
+        }
     }
 
 }

@@ -25,13 +25,13 @@ namespace DDDSample1.Controllers
         }
 
         [HttpPost]
-        [Route("Criar Back Office User")]
+        [Route("CriarStaff")]
         public async Task<IActionResult> CreateUser([FromBody] UserDto user)
         {   try
             {
                 if (!User.IsInRole(UserRole.Admin.ToString()))
                 {
-                    return Unauthorized(new { mensagem = "Você não é admin." });
+                    return Unauthorized(new { mensagem = "Não tens autorizações admin." });
                 }
 
 

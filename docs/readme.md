@@ -24,8 +24,8 @@ A atribuição de tarefas (requisitos/user stories/use cases) durante o projeto.
 | **[US 5.1.3](Sprint_A/us_5.1.3/readme.md)** |   |
 | **[US 5.1.4](Sprint_A/us_5.1.4/readme.md)** |     |
 | **[US 5.1.5](Sprint_A/us_5.1.5/readme.md)** | [1211314](1211314/readme.md)   |
-| **[US 5.1.6](Sprint_A/us_5.1.6/readme.md)** | [xxxxxxx](xxxxxxx/readme.md) e [xxxxxxx](xxxxxxx/readme.md) |
-| **[US 5.1.7](Sprint_A/us_5.1.7/readme.md)** |   |
+| **[US 5.1.6](Sprint_A/us_5.1.6/readme.md)** | [1211859](1211859/readme.md) e [1221190](1221190/readme.md) |
+| **[US 5.1.7](Sprint_A/us_5.1.7/readme.md)** | [1211859](1211859/readme.md)  |
 | **[US 5.1.8](Sprint_A/us_5.1.8/readme.md)** |   |
 | **[US 5.1.9](Sprint_A/us_5.1.9/readme.md)** |   |
 | **[US 5.1.10](Sprint_A/us_5.1.10/readme.md)** |    |
@@ -38,7 +38,7 @@ A atribuição de tarefas (requisitos/user stories/use cases) durante o projeto.
 | **[US 5.1.17](Sprint_A/us_5.1.17/readme.md)** |  |
 | **[US 5.1.18](Sprint_A/us_5.1.18/readme.md)** |  |
 | **[US 5.1.19](Sprint_A/us_5.1.19/readme.md)** |  |
-| **[US 5.1.20](Sprint_A/us_5.1.20/readme.md)** |  |
-| **[US 5.1.21](Sprint_A/us_5.1.21/readme.md)** |  |
-| **[US 5.1.22](Sprint_A/us_5.1.22/readme.md)** |  |
-| **[US 5.1.23](Sprint_A/us_5.1.23/readme.md)** |  |
+| **[US 5.1.20](Sprint_A/us_5.1.20/readme.md)** | [1211859](1211859/readme.md) |
+| **[US 5.1.21](Sprint_A/us_5.1.21/readme.md)** | [1211859](1211859/readme.md) |
+| **[US 5.1.22](Sprint_A/us_5.1.22/readme.md)** | [1211859](1211859/readme.md) |
+| **[US 5.1.23](Sprint_A/us_5.1.23/readme.md)** | [1211859](1211859/readme.md) |

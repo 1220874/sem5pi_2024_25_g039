@@ -17,6 +17,7 @@ using Infrastructure.Users;
 using Services;
 using Domain.MailDomain;
 using Shared;
+using Infrastructure.Patients;
 
 
 namespace DDDSample1
@@ -34,7 +35,9 @@ namespace DDDSample1
         public void ConfigureServices(IServiceCollection services)
         {       
             services.AddScoped<UserService>(); // Adicione esta linha para registrar o UserService
-            services.AddScoped<UserRepository>(); // Certifique-se de que o UserRepository também está registrado
+            services.AddScoped<UserRepository>();
+            services.AddScoped<PatientService>(); // Adicione esta linha para registrar o UserService
+            services.AddScoped<PatientRepository>();
             services.AddScoped<IUnitOfWork, UnitOfWork>(); // Certifique-se de que o IUnitOfWork está registrado
 
             var key = Encoding.ASCII.GetBytes(Settings.Secret);
@@ -111,10 +114,9 @@ namespace DDDSample1
                     }
                 });
             });
-        services.Configure<MailDSettings>(Configuration.GetSection("MailSettings"));
-        services.AddTransient<IMailService, MailServices>();
-
             
+            services.Configure<MailDSettings>(Configuration.GetSection("MailSettings"));
+            services.AddTransient<IMailService, MailServices>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

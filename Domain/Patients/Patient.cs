@@ -19,8 +19,10 @@ namespace Domain.Patients
         public string Address { get; set; }
         public string EmergencyContact { get; set; }
         public string AppointmentHistory { get; set; }
+        public string MedicalHistory { get; set; }
+        public string Allergies { get; set; }
 
-        public Patient(string firstName, string lastName, DateTime birthDate, string gender, string email, string phoneNumber, int medicalRecordNumber, string address, string emergencyContact, string appointmentHistory)
+        public Patient(string firstName, string lastName, DateTime birthDate, string gender, string email, string phoneNumber, int medicalRecordNumber, string address, string emergencyContact, string appointmentHistory, string medicalHistory, string allergies)
         {
             FirstName = firstName;
             LastName = lastName;
@@ -32,6 +34,8 @@ namespace Domain.Patients
             Address = address;
             EmergencyContact = emergencyContact;
             AppointmentHistory = appointmentHistory;
+            MedicalHistory = medicalHistory;
+            Allergies = allergies;
         }
     }
 }

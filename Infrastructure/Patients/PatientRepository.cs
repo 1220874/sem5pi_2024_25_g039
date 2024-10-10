@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using DDDSample1.Infrastructure;
 using Domain.Patients;
@@ -43,5 +44,12 @@ namespace Infrastructure.Patients
         {
             return await _context.Patients.FirstOrDefaultAsync(x => x.MedicalRecordNumber == medicalRecordNumber);
         }
+
+        public async Task UpdateAsync(Patient patient) {
+            _context.Patients.Update(patient);
+            await _context.SaveChangesAsync();
+        }
+
+    
     }
 }

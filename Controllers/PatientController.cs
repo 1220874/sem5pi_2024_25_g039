@@ -103,6 +103,7 @@ namespace Controllers
                 patientDto.FirstName,
                 patientDto.LastName,
                 patientDto.PhoneNumber,
+                patientDto.Email,
                 patientDto.MedicalHistory,
                 patientDto.Allergies
             );

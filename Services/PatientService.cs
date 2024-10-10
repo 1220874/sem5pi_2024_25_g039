@@ -4,8 +4,10 @@ using System.Linq;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using DDDSample1.Domain.Shared;
+using Domain.MailDomain;
 using Domain.Patients;
 using Infrastructure.Patients;
+using Shared;
 
 namespace Services
 {
@@ -13,11 +15,13 @@ namespace Services
     {
         private readonly IUnitOfWork _unitOfWork;
         private readonly PatientRepository _repo;
+        private readonly IMailService _mailService;
 
-        public PatientService(IUnitOfWork unitOfWork, PatientRepository repo)
+        public PatientService(IUnitOfWork unitOfWork, PatientRepository repo, IMailService mailService)
         {
             this._unitOfWork = unitOfWork;
             this._repo = repo;
+            this._mailService = mailService ?? throw new ArgumentNullException(nameof(mailService));
         }
 
         public PatientService() { }
@@ -113,6 +117,25 @@ namespace Services
             if (!string.IsNullOrWhiteSpace(dto.PhoneNumber))
             {
                 existingPatient.PhoneNumber = dto.PhoneNumber;
+            }
+
+            if (!string.IsNullOrWhiteSpace(dto.Email))
+            {
+                existingPatient.Email = dto.Email;
+            }
+
+            // Enviar um email se o número de telefone ou o sobrenome for alterado
+            if (!string.IsNullOrWhiteSpace(dto.PhoneNumber) | !string.IsNullOrWhiteSpace(dto.Email))
+            {
+                MailData mailData = new MailData
+            (
+                existingPatient.Email,
+                existingPatient.FirstName + " " + existingPatient.LastName,
+                "HOSPITAL DO ISEP - Alteração de Dados",
+                "Após esta mensagem, o seu email e/ou número de telefone foram alterados. Se não foi você, contacte-nos. \n\nSeu email: " + existingPatient.Email + "\nSeu número de telefone: " + existingPatient.PhoneNumber
+            );
+                bool emailSent = _mailService.SendMail(mailData);
+
             }
 
             if (!string.IsNullOrWhiteSpace(dto.MedicalHistory))
